@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "234115680423",
+    "project_id": "butterflyapp-e9395",
+    "storage_bucket": "butterflyapp-e9395.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234115680423:android:e7de0153383596b3dc7382",
+        "android_client_info": {
+          "package_name": "com.example.butterfly_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234115680423-e3aeaf479saqirlv3got5o73q0j9tv24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLj_lA_TMKtEBXoFgZAtJwtIaeTRO84RI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234115680423-e3aeaf479saqirlv3got5o73q0j9tv24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
