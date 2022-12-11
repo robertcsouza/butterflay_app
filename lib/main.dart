@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
               context: context,
               lable: 'Cadastre-se',
               call: () {
-                Navigator.pushNamed(context, '/register');
+                Navigator.pushNamed(context, '/perfil');
               },
               textStyle: TextStyle(color: dark)),
         )
