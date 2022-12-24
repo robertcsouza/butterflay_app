@@ -4,22 +4,19 @@ import '../settings/colors.dart';
 
 Widget drawer({required context, required int index, urlImage}) {
   return Drawer(
-    // Add a ListView to the drawer. This ensures the user can scroll
-    // through the options in the drawer if there isn't enough vertical
-    // space to fit everything.
     child: ListView(
       // Important: Remove any padding from the ListView.
       padding: EdgeInsets.zero,
       children: [
         UserAccountsDrawerHeader(
             decoration: BoxDecoration(color: const Color(0xffC48B9F)),
-            accountName: Text(
+            accountName: const Text(
               "Alexsandra Santos",
               style: TextStyle(
                 fontWeight: FontWeight.normal,
               ),
             ),
-            accountEmail: Text(
+            accountEmail: const Text(
               "alexsandra.santos@gmail.com",
               style: TextStyle(
                 fontWeight: FontWeight.normal,
@@ -29,8 +26,9 @@ Widget drawer({required context, required int index, urlImage}) {
                 _thumbImage(urlImage: urlImage, context: context)),
         ListTile(
           selected: index == 1,
+          selectedColor: dark,
           title: Row(
-            children: [
+            children: const [
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(Icons.shopping_basket_rounded),
@@ -39,14 +37,14 @@ Widget drawer({required context, required int index, urlImage}) {
             ],
           ),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.pushReplacementNamed(context, '/products');
           },
         ),
         ListTile(
           selected: index == 2 ? true : false,
           selectedColor: dark,
           title: Row(
-            children: [
+            children: const [
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(Icons.person),
@@ -55,10 +53,23 @@ Widget drawer({required context, required int index, urlImage}) {
             ],
           ),
           onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
+            Navigator.pushReplacementNamed(context, '/perfil');
+          },
+        ),
+        ListTile(
+          selected: index == 3 ? true : false,
+          selectedColor: dark,
+          title: Row(
+            children: const [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.token),
+              ),
+              Text("Gerar Token")
+            ],
+          ),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/token');
           },
         ),
       ],
@@ -107,7 +118,7 @@ Widget _thumbImage({urlImage, context}) {
               padding: const EdgeInsets.all(5.0),
               alignment: Alignment.bottomCenter,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(100)),
+                borderRadius: const BorderRadius.all(Radius.circular(100)),
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -118,11 +129,11 @@ Widget _thumbImage({urlImage, context}) {
                   ],
                 ),
               ),
-              child: Padding(
+              child: const Padding(
                 padding: const EdgeInsets.only(bottom: 12.0),
                 child: const Text(
                   'Alterar foto',
-                  style: TextStyle(color: Colors.white, fontSize: 10.0),
+                  style: const TextStyle(color: Colors.white, fontSize: 10.0),
                 ),
               ),
             ),

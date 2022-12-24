@@ -8,7 +8,7 @@ Widget btPrimary(
       decoration:
           BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
       width: MediaQuery.of(context).size.width,
-      height: 50,
+      height: 40,
       child: ElevatedButton(
         onPressed: call,
         child: Text(

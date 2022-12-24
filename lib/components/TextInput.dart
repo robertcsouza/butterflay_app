@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../settings/colors.dart';
@@ -13,7 +12,7 @@ Widget input(
     padding: const EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
     child: Container(
       width: MediaQuery.of(context).size.width,
-      height: 50,
+      height: 45,
       decoration: BoxDecoration(
           color: gray, borderRadius: BorderRadius.all(Radius.circular(10))),
       child: TextField(
@@ -23,9 +22,46 @@ Widget input(
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: lable,
-            contentPadding: EdgeInsets.only(left: 20),
+            contentPadding: EdgeInsets.only(left: 20, bottom: 7),
             hintStyle: TextStyle()),
       ),
     ),
+  );
+}
+
+Widget inputSearch(
+    {TextEditingController? controller,
+    String? lable,
+    required bool obscure,
+    TextInputType? type,
+    call,
+    context}) {
+  return Padding(
+    padding: const EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
+    child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: 35,
+        decoration: BoxDecoration(
+            color: gray, borderRadius: BorderRadius.all(Radius.circular(10))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.70,
+              height: 35,
+              child: TextField(
+                keyboardType: type == null ? TextInputType.text : type,
+                obscureText: obscure,
+                controller: controller,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: lable,
+                    contentPadding: EdgeInsets.only(left: 30, bottom: 10),
+                    hintStyle: TextStyle()),
+              ),
+            ),
+            IconButton(onPressed: call, icon: Icon(Icons.search))
+          ],
+        )),
   );
 }

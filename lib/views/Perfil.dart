@@ -50,17 +50,23 @@ class _PerfilState extends State<Perfil> {
     if (_toggle == false) {
       return Padding(
         padding: const EdgeInsets.only(top: 32.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
           children: [
-            Text("Alexsanda santos da silva"),
-            IconButton(
-                onPressed: () {
-                  setState(() {
-                    _toggle = !_toggle;
-                  });
-                },
-                icon: Icon(Icons.edit))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Alexsanda santos da silva"),
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _toggle = !_toggle;
+                      });
+                    },
+                    icon: Icon(Icons.edit)),
+              ],
+            ),
+            btText(
+                lable: 'Sair', call: () {}, textStyle: TextStyle(color: dark))
           ],
         ),
       );
@@ -72,7 +78,8 @@ class _PerfilState extends State<Perfil> {
             child: input(obscure: false, lable: 'Nome', context: context),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(
+                top: 32.0, bottom: 16.0, left: 64.0, right: 64.0),
             child: btPrimary(
                 context: context,
                 lable: 'Salvar',
