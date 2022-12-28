@@ -69,49 +69,99 @@ class _ProductDetailState extends State<ProductDetail> {
                 'R\$ 25,00',
                 style: TextStyle(
                     color: dark, fontWeight: FontWeight.bold, fontSize: 16),
-              )
+              ),
             ],
           ),
         ),
-        Text('Tamanhos disponiveis'),
         Padding(
-          padding: const EdgeInsets.only(top: 8.0, left: 16.0),
+          padding: const EdgeInsets.only(top: 32.0, left: 16, right: 16),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: dark, width: 2),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Text('Tamanhos disponíveis'),
                   ),
-                  child: Center(child: Text('P')),
-                ),
+                  Container(
+                    child: _sizesAvailable(context: context),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: dark, width: 2),
-                  ),
-                  child: Center(child: Text('M')),
-                ),
-              ),
-              Container(
-                width: 20,
-                height: 20,
-                decoration: BoxDecoration(
-                  border: Border.all(color: dark, width: 2),
-                ),
-                child: Center(child: Text('G')),
-              )
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Text('Cor'),
+                    ),
+                    _colorAvailable(context: context)
+                  ])
             ],
           ),
-        ),
+        )
       ],
+    );
+  }
+
+  Widget _colorAvailable({context}) {
+    return Container(
+      width: 24,
+      height: 24,
+      decoration: BoxDecoration(
+          color: Colors.blue, borderRadius: BorderRadius.circular(100)),
+    );
+  }
+
+  Widget _sizesAvailable({context}) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 8.0,
+        left: 8.0,
+        bottom: 8,
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8, top: 8),
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                border: Border.all(color: dark, width: 2),
+              ),
+              child: Center(child: Text('P')),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                border: Border.all(color: dark, width: 2),
+              ),
+              child: Center(child: Text('M')),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                border: Border.all(color: dark, width: 2),
+              ),
+              child: Center(child: Text('G')),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
