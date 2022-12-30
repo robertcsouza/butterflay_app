@@ -28,3 +28,18 @@ Widget btText({context, required String lable, call, TextStyle? textStyle}) {
         style: textStyle != null ? textStyle : TextStyle(),
       ));
 }
+
+Widget btTextIcon(
+    {context,
+    required String lable,
+    required Icon icon,
+    call,
+    TextStyle? textStyle}) {
+  return TextButton.icon(
+      icon: icon,
+      onPressed: call,
+      label: Text(
+        lable,
+        style: textStyle != null ? textStyle : TextStyle(),
+      ));
+}
