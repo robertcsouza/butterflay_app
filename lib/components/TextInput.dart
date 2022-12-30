@@ -29,6 +29,36 @@ Widget input(
   );
 }
 
+Widget inputField(
+    {TextEditingController? controller,
+    String? lable,
+    required bool obscure,
+    TextInputType? type,
+    int? maxline,
+    context}) {
+  return Padding(
+    padding: const EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
+    child: Container(
+      width: MediaQuery.of(context).size.width,
+      height: 100,
+      decoration: BoxDecoration(
+          color: gray, borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: TextFormField(
+        minLines: 1,
+        maxLines: 5,
+        keyboardType: TextInputType.multiline,
+        obscureText: obscure,
+        controller: controller,
+        decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: lable,
+            contentPadding: EdgeInsets.only(left: 20, bottom: 7),
+            hintStyle: TextStyle()),
+      ),
+    ),
+  );
+}
+
 Widget inputSearch(
     {TextEditingController? controller,
     String? lable,

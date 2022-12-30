@@ -65,7 +65,9 @@ class _ProductDetailState extends State<ProductDetail> {
             textStyle: TextStyle(color: dark),
             lable: "Editar",
             context: context,
-            call: () {},
+            call: () {
+              Navigator.pushNamed(context, '/product/edit');
+            },
           ),
         ),
         Padding(
@@ -183,8 +185,8 @@ class _ProductDetailState extends State<ProductDetail> {
                 });
               },
               child: Container(
-                width: 36,
-                height: 36,
+                width: 26,
+                height: 26,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -195,7 +197,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     child: Text(
                   'P',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 16,
                   ),
                 )),
               ),
@@ -211,8 +213,8 @@ class _ProductDetailState extends State<ProductDetail> {
                 });
               },
               child: Container(
-                width: 36,
-                height: 36,
+                width: 26,
+                height: 26,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -223,7 +225,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     child: Text(
                   'M',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 16,
                   ),
                 )),
               ),
@@ -239,8 +241,8 @@ class _ProductDetailState extends State<ProductDetail> {
                 });
               },
               child: Container(
-                width: 36,
-                height: 36,
+                width: 26,
+                height: 26,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
@@ -251,7 +253,7 @@ class _ProductDetailState extends State<ProductDetail> {
                     child: Text(
                   'G',
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 16,
                   ),
                 )),
               ),
