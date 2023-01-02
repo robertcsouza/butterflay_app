@@ -11,6 +11,5 @@ class RegisterController {
       required String token}) async {
     UserCredential _userCredential = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
-    print(_userCredential);
   }
 }
