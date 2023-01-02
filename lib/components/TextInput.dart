@@ -12,7 +12,7 @@ Widget input(
     padding: const EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
     child: Container(
       width: MediaQuery.of(context).size.width,
-      height: 45,
+      height: 35,
       decoration: BoxDecoration(
           color: gray, borderRadius: BorderRadius.all(Radius.circular(10))),
       child: TextField(
@@ -22,8 +22,8 @@ Widget input(
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: lable,
-            contentPadding: EdgeInsets.only(left: 20, bottom: 7),
-            hintStyle: TextStyle()),
+            contentPadding: EdgeInsets.only(left: 20, bottom: 15),
+            hintStyle: TextStyle(fontSize: 12)),
       ),
     ),
   );

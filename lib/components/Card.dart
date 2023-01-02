@@ -39,7 +39,10 @@ Widget cardProduct({context}) {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('Conjunto listrado'),
+                            child: Text(
+                              'Conjunto listrado',
+                              style: TextStyle(fontSize: 13),
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -59,32 +62,47 @@ Widget cardProduct({context}) {
                                 padding: const EdgeInsets.only(
                                     left: 8.0, right: 8.0),
                                 child: Container(
-                                  width: 20,
-                                  height: 20,
+                                  width: 16,
+                                  height: 16,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: dark, width: 2),
+                                    borderRadius: BorderRadius.circular(5),
+                                    border: Border.all(color: dark, width: 1.5),
                                   ),
-                                  child: Center(child: Text('P')),
+                                  child: Center(
+                                      child: Text(
+                                    'P',
+                                    style: TextStyle(fontSize: 12),
+                                  )),
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(right: 8.0),
                                 child: Container(
-                                  width: 20,
-                                  height: 20,
+                                  width: 16,
+                                  height: 16,
                                   decoration: BoxDecoration(
-                                    border: Border.all(color: dark, width: 2),
+                                    borderRadius: BorderRadius.circular(5),
+                                    border: Border.all(color: dark, width: 1.5),
                                   ),
-                                  child: Center(child: Text('M')),
+                                  child: Center(
+                                      child: Text(
+                                    'M',
+                                    style: TextStyle(fontSize: 12),
+                                  )),
                                 ),
                               ),
                               Container(
-                                width: 20,
-                                height: 20,
+                                width: 16,
+                                height: 16,
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: dark, width: 2),
+                                  borderRadius: BorderRadius.circular(5),
+                                  border: Border.all(color: dark, width: 1.5),
                                 ),
-                                child: Center(child: Text('G')),
+                                child: Center(
+                                    child: Text(
+                                  'G',
+                                  style: TextStyle(fontSize: 12),
+                                )),
                               )
                             ],
                           ),

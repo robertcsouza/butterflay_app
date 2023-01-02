@@ -1,5 +1,6 @@
 import 'package:butterfly_app/components/TextInput.dart';
 import 'package:butterfly_app/components/buttons.dart';
+import 'package:butterfly_app/controllers/RegisterController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,6 +15,12 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _tokenController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _passwordRepeatController = TextEditingController();
+  RegisterController _registerController = RegisterController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,23 +45,49 @@ class _RegisterState extends State<Register> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 16.0, bottom: 8),
-          child: input(obscure: false, context: context, lable: 'Email'),
+          child: input(
+              obscure: false,
+              context: context,
+              lable: 'Email',
+              controller: _emailController),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 16.0, bottom: 8),
+          child: input(
+              obscure: false,
+              context: context,
+              lable: 'Token',
+              controller: _tokenController,
+              type: TextInputType.number),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 16),
-          child: input(obscure: true, context: context, lable: 'Senha'),
+          child: input(
+              obscure: true,
+              context: context,
+              lable: 'Senha',
+              controller: _passwordController),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 16),
-          child: input(obscure: true, context: context, lable: 'Repetir senha'),
+          child: input(
+              obscure: true,
+              context: context,
+              lable: 'Repetir senha',
+              controller: _passwordRepeatController),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
           child: btPrimary(
               context: context,
-              lable: 'Entrar',
+              lable: 'Cadastrar',
               call: () {
-                Navigator.pushNamed(context, '/');
+                _registerController.register(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    passwordRepeat: _passwordRepeatController.text,
+                    token: _tokenController.text);
+                // Navigator.pushNamed(context, '/');
               }),
         ),
       ],

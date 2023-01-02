@@ -1,9 +1,10 @@
 import 'package:butterfly_app/components/TextInput.dart';
 import 'package:butterfly_app/components/buttons.dart';
 import 'package:butterfly_app/config/Routes.dart';
+import 'package:butterfly_app/controllers/mainController.dart';
 import 'package:butterfly_app/settings/colors.dart';
 import 'package:butterfly_app/settings/theme.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: routes(),
       title: 'Butterfly',
@@ -39,6 +41,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  MainController _mainController = MainController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,15 +69,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 16.0, bottom: 8),
-          child: input(obscure: false, context: context, lable: 'Email'),
+          child: input(
+              obscure: false,
+              context: context,
+              lable: 'Email',
+              controller: _emailController),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 16),
-          child: input(obscure: true, context: context, lable: 'Senha'),
+          child: input(
+              obscure: true,
+              context: context,
+              lable: 'Senha',
+              controller: _passwordController),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
-          child: btPrimary(context: context, lable: 'Entrar', call: () {}),
+          child: btPrimary(
+              context: context,
+              lable: 'Entrar',
+              call: () {
+                _mainController.login(
+                    email: _emailController.text,
+                    password: _passwordController.text);
+              }),
         ),
         Padding(
           padding: const EdgeInsets.all(4.0),
@@ -79,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
               context: context,
               lable: 'Cadastre-se',
               call: () {
-                Navigator.pushNamed(context, '/perfil');
+                Navigator.pushNamed(context, '/register');
               },
               textStyle: TextStyle(color: dark)),
         )

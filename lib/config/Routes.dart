@@ -16,5 +16,6 @@ routes() {
     '/product/detail': (context) => ProductDetail(),
     '/product/create': (context) => CreateProduct(),
     '/product/edit': (context) => EditProduct(),
+    '/product/create': (context) => CreateProduct(),
   };
 }

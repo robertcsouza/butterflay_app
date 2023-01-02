@@ -31,53 +31,53 @@ class _EditProductState extends State<EditProduct> {
         title: Text("Editar Produto"),
         centerTitle: true,
       ),
-      body: _body(),
+      body: SingleChildScrollView(child: _body()),
     );
   }
 
   Widget _body() {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 100),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Icon(Icons.photo_camera),
-                      ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 100),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                      child: Icon(Icons.photo_camera),
                     ),
                   ),
-                  Expanded(
-                      child: Container(
-                    width: MediaQuery.of(context).size.width - 200,
-                    height: 80,
-                    child: _editImages(),
-                  ))
-                ],
+                ),
+                Expanded(
+                    child: Container(
+                  width: MediaQuery.of(context).size.width - 200,
+                  height: 80,
+                  child: _editImages(),
+                ))
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 54.0, bottom: 8.0, left: 32.0),
+              child: Text(
+                "Criar um produto",
+                style: TextStyle(fontSize: 12),
               ),
-              const Padding(
-                padding: EdgeInsets.only(top: 54.0, bottom: 8.0, left: 32.0),
-                child: Text("Criar um produto"),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
-                child: _form(),
-              )
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+              child: _form(),
+            )
+          ],
         ),
       ),
     );
@@ -120,10 +120,10 @@ class _EditProductState extends State<EditProduct> {
               children: [
                 btTextIcon(
                     lable: "Selecionar Cor",
-                    textStyle: TextStyle(color: Colors.grey),
+                    textStyle: TextStyle(color: pickerColor, fontSize: 12),
                     icon: Icon(
                       Icons.palette,
-                      color: Colors.grey,
+                      color: pickerColor,
                     ),
                     call: () {
                       _pickerColor();
@@ -139,7 +139,10 @@ class _EditProductState extends State<EditProduct> {
             )),
         Padding(
           padding: const EdgeInsets.only(left: 16.0, bottom: 8.0),
-          child: Text("Tamanhos"),
+          child: Text(
+            "Tamanhos",
+            style: TextStyle(fontSize: 12),
+          ),
         ),
         _sizesAvailable(),
         Padding(
@@ -148,7 +151,10 @@ class _EditProductState extends State<EditProduct> {
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text("Detalhes"),
+          child: Text(
+            "Detalhes",
+            style: TextStyle(fontSize: 12),
+          ),
         ),
         inputField(
           obscure: false,

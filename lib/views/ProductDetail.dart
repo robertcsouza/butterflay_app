@@ -29,6 +29,12 @@ class _ProductDetailState extends State<ProductDetail> {
       appBar: AppBar(
         title: const Text('Detalhes do produto'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -61,8 +67,12 @@ class _ProductDetailState extends State<ProductDetail> {
         Padding(
           padding: const EdgeInsets.only(top: 32),
           child: btTextIcon(
-            icon: Icon(Icons.edit, color: dark),
-            textStyle: TextStyle(color: dark),
+            icon: Icon(
+              Icons.edit,
+              color: dark,
+              size: 18,
+            ),
+            textStyle: TextStyle(color: dark, fontSize: 12),
             lable: "Editar",
             context: context,
             call: () {
@@ -77,12 +87,12 @@ class _ProductDetailState extends State<ProductDetail> {
             children: [
               const Text(
                 'Short jeans Cintura alta',
-                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
               ),
               Text(
                 'R\$ 25,00',
                 style: TextStyle(
-                    color: dark, fontWeight: FontWeight.bold, fontSize: 16),
+                    color: dark, fontWeight: FontWeight.bold, fontSize: 14),
               ),
             ],
           ),
@@ -93,7 +103,10 @@ class _ProductDetailState extends State<ProductDetail> {
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 32.0, top: 32),
-                child: Text('Cor'),
+                child: Text(
+                  'Cor',
+                  style: TextStyle(fontSize: 12),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 32.0, top: 8),
@@ -110,8 +123,11 @@ class _ProductDetailState extends State<ProductDetail> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.only(bottom: 16),
-                    child: Text('Tamanhos disponíveis'),
+                    padding: EdgeInsets.only(bottom: 4),
+                    child: Text(
+                      'Tamanhos disponíveis',
+                      style: TextStyle(fontSize: 12),
+                    ),
                   ),
                   Container(
                     child: _sizesAvailable(context: context),
@@ -122,15 +138,18 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 16.0, left: 16),
+          padding: const EdgeInsets.only(top: 8.0, left: 16),
           child: Row(
             children: [
-              Text("Disponibilidade"),
+              Text(
+                "Disponibilidade",
+                style: TextStyle(fontSize: 12),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(
                   "08 em estoque",
-                  style: TextStyle(color: dark),
+                  style: TextStyle(color: dark, fontSize: 12),
                 ),
               )
             ],
@@ -138,12 +157,17 @@ class _ProductDetailState extends State<ProductDetail> {
         ),
         const Padding(
           padding: EdgeInsets.all(16.0),
-          child: Text("Detalhes"),
+          child: Text(
+            "Detalhes",
+            style: TextStyle(fontSize: 12),
+          ),
         ),
         const Padding(
           padding: EdgeInsets.all(16.0),
           child: Text(
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"),
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic",
+            style: TextStyle(fontSize: 11),
+          ),
         ),
         Padding(
           padding:

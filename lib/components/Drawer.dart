@@ -31,13 +31,29 @@ Widget drawer({required context, required int index, urlImage}) {
             children: const [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.shopping_basket_rounded),
+                child: Icon(Icons.checkroom),
               ),
-              Text("Produtos")
+              Text("Catálogo")
             ],
           ),
           onTap: () {
             Navigator.pushReplacementNamed(context, '/products');
+          },
+        ),
+        ListTile(
+          selected: index == 3,
+          selectedColor: dark,
+          title: Row(
+            children: const [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.dry_cleaning_rounded),
+              ),
+              Text("Adicionar Roupa")
+            ],
+          ),
+          onTap: () {
+            Navigator.pushReplacementNamed(context, '/product/create');
           },
         ),
         ListTile(
@@ -63,7 +79,7 @@ Widget drawer({required context, required int index, urlImage}) {
             children: const [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.token),
+                child: Icon(Icons.pattern),
               ),
               Text("Gerar Token")
             ],
