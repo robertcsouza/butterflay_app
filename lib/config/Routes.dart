@@ -1,6 +1,7 @@
 import 'package:butterfly_app/views/CreateProduct.dart';
 import 'package:butterfly_app/views/EditProduct.dart';
 import 'package:butterfly_app/views/GenerateToken.dart';
+import 'package:butterfly_app/views/PinCodeVerificationScreen.dart';
 import 'package:butterfly_app/views/Product.dart';
 import 'package:butterfly_app/views/ProductDetail.dart';
 
@@ -17,5 +18,6 @@ routes() {
     '/product/create': (context) => CreateProduct(),
     '/product/edit': (context) => EditProduct(),
     '/product/create': (context) => CreateProduct(),
+    '/register/pincode': (context) => PinCodeVerificationScreen(),
   };
 }

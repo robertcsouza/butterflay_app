@@ -16,7 +16,6 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   TextEditingController _emailController = TextEditingController();
-  TextEditingController _tokenController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _passwordRepeatController = TextEditingController();
   RegisterController _registerController = RegisterController();
@@ -52,15 +51,6 @@ class _RegisterState extends State<Register> {
               controller: _emailController),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 16.0, bottom: 8),
-          child: input(
-              obscure: false,
-              context: context,
-              lable: 'Token',
-              controller: _tokenController,
-              type: TextInputType.number),
-        ),
-        Padding(
           padding: const EdgeInsets.only(top: 8.0, bottom: 16),
           child: input(
               obscure: true,
@@ -83,11 +73,11 @@ class _RegisterState extends State<Register> {
               lable: 'Cadastrar',
               call: () {
                 _registerController.register(
-                    email: _emailController.text,
-                    password: _passwordController.text,
-                    passwordRepeat: _passwordRepeatController.text,
-                    token: _tokenController.text);
-                // Navigator.pushNamed(context, '/');
+                  email: _emailController.text,
+                  password: _passwordController.text,
+                  passwordRepeat: _passwordRepeatController.text,
+                );
+                Navigator.pushNamed(context, '/register/pincode');
               }),
         ),
       ],
